@@ -1,3 +1,5 @@
+import ClearSearch from "./ClearSearch/ClearSearch";
+import ReadRandomArticle from "./ReadRandomArticle/ReadRandomArticle";
 import SearchSection from "./SearchSection/SearchSection";
 import "./Sidebar.scss"
 import SocialLinks from "./SocialLinks/SocialLinks";
@@ -8,10 +10,16 @@ export default function Sidebar () {
     return (
         <div className = "sidebar">
             <div className="sidebar-section">
+                <ClearSearch/>
+            </div>
+            <div className="sidebar-section">
                 <SearchSection/>
             </div>
             <div className="sidebar-section">
                 <TagsSection/>
+            </div>
+            <div className="sidebar-section">
+                <ReadRandomArticle/>
             </div>
             <div className ="sidebar-theme-switch">
                 <ThemeSection aria-label="Toggle Theme"/>
