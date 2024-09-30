@@ -1,3 +1,4 @@
+import SearchSection from "./SearchSection/SearchSection";
 import "./Sidebar.scss"
 import SocialLinks from "./SocialLinks/SocialLinks";
 import TagsSection from "./TagsSection/TagsSection";
@@ -6,6 +7,9 @@ import ThemeSection from './ThemeSection/ThemeSection';
 export default function Sidebar () {
     return (
         <div className = "sidebar">
+            <div className="sidebar-section">
+                <SearchSection/>
+            </div>
             <div className="sidebar-section">
                 <TagsSection/>
             </div>
