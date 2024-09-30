@@ -235,7 +235,7 @@ label {
   z-index: 3;
 }
 
-.--sidebar_toggle {
+.sidebar_toggle {
   display: none;
 }
 
@@ -262,12 +262,12 @@ label {
     bottom: -100%;
     padding: 0;
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    .active{
+    &.active{
       bottom: 0%;
     }
   }
 
-  .--sidebar_toggle {
+  .sidebar_toggle {
     display: block;
     height: 3rem;
     padding: 1rem;
@@ -282,7 +282,7 @@ label {
     margin-right: auto;
     z-index: 100;
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    .active{
+    &.active{
       top: 0;
       transform: rotate(180deg);
     }
