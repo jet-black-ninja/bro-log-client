@@ -1,0 +1,14 @@
+.about-container {
+    padding: 2em;
+    margin-top: 1rem;
+    background-color: var(--card_background);
+    color:var(--text_2);
+    border-radius: 4px;
+    font-size: 0.8em;
+    h1{
+        font-size: 1.5em;
+    }
+    ul{
+        list-style: none;
+    }
+}

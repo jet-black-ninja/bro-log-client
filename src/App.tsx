@@ -7,10 +7,12 @@ import { ViewType } from './interfaces/customTypes'
 import { Routes, Route , Navigate} from 'react-router-dom'
 import { FaAngleDoubleUp } from 'react-icons/fa'
 import Sidebar from './components/Sidebar/Sidebar'
+import NotFoundPage from './components/Main/NotFoundPage/NotFoundPage'
+import About from './components/Main/About/About'
 function App() {
   const {theme} = useContext(ThemeContext);
   const [currentView, setCurrentView] = useState<ViewType | null >(
-    (localStorage.getItem('currentView' as ViewType) || null)
+    (localStorage.getItem('currentView') as ViewType) || null
   );
    const [sidebarActive, setSidebarActive] = useState<boolean>(false);
 
@@ -29,10 +31,12 @@ function App() {
             <Route path="/" />
             <Route path="/all"/>
             <Route path = "/latest"/>
-            <Route path='/about'/>
+            <Route path='/about' element={<About setCurrentView={setCurrentView}/>}/>
+            <Route path = "*" element={<NotFoundPage setCurrentView={setCurrentView}/>} />
           </Routes>
         </main>
-        <aside>
+      </div>
+      <aside>
           <FaAngleDoubleUp
           aria-label='Toggle Sidebar'
           className ={`sidebar_toggle ${sidebarActive ? 'Active': ''}`}
@@ -42,10 +46,7 @@ function App() {
             <Sidebar/>
           </div>
         </aside>
-      </div>
     </div>
-      
-    
   )
 }
 
