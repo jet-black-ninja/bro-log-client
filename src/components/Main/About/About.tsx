@@ -9,7 +9,7 @@ interface Props{
 export default function About ({setCurrentView}:Props) {
      const {setFilter}=useContext(FilterContext);
      useEffect(() => {
-        setCurrentView('About');
+        setCurrentView('About')
         localStorage.setItem('currentView','About');
         setFilter(null);
      },[]);
