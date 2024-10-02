@@ -6,16 +6,16 @@ import { FaRegCommentAlt } from "react-icons/fa";
 import './CommentsSection.scss';
 
 interface Props {
-    commentsList:IComment[];
+    commentList:IComment[];
     setRefetchTrigger: (value: SetStateAction<boolean>) => void;
 }
 
-export default function CommentsSection({ commentsList, setRefetchTrigger }: Props) {
+export default function CommentsSection({ commentList, setRefetchTrigger }: Props) {
     const [showModal, setShowModal] = useState(false);
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
 
-    if(commentsList.length ===0){
+    if(commentList.length ===0){
         return (
             <div className ="comment-section">
                 <h2>No comments</h2>
@@ -31,7 +31,7 @@ export default function CommentsSection({ commentsList, setRefetchTrigger }: Pro
         );
     }else {
         <div className="comment-section">
-            <h2>{commentsList.length} Comments</h2>
+            <h2>{commentList.length} Comments</h2>
             <button className="add-comment-button" onClick={openModal} >
                 Add Comment <FaRegCommentAlt/>
             </button>
@@ -40,7 +40,7 @@ export default function CommentsSection({ commentsList, setRefetchTrigger }: Pro
             closeModal={closeModal}
             setRefetchTrigger={setRefetchTrigger}
             />
-            {commentsList?.map((comment)=> (
+            {commentList?.map((comment)=> (
                 <div key = {comment._id.toString()}>
                     <Comment commentData={comment}/>
                 </div>

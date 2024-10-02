@@ -1,0 +1,19 @@
+.all-article-list {
+    padding-top: 1rem;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit , minmax(300px, 1fr));
+    grid-auto-flow: dense;
+}
+.article-container {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0 , 0, 0 , 0.1); 
+    overflow: hidden;
+    color: var(--text_2);
+    &:nth-last-of-type(4n) {
+        grid-column: span 2;
+    }
+    @media  screen and (max-width:800px)  {
+        grid-column: span 1;
+    }
+}

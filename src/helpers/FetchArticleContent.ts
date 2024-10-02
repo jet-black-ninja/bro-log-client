@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Dispatch, SetStateAction } from "react";
 import { IArticle } from "../interfaces/Article";
-export const fetchArticleComments = async(
+export const fetchArticleContent=  async(
     id: string,
     setArticle:Dispatch<SetStateAction<IArticle>>,
     setLoading:Dispatch<SetStateAction<boolean>>,
