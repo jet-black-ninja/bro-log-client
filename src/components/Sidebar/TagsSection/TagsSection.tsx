@@ -13,7 +13,7 @@ export default function TagsSection () {
     const navigate = useNavigate();
 
     const handleTagClick = (tag: ITag) => {
-        if(tag!=filter){
+        if(tag!==filter){
             navigate('/search');
         }else {
             setFilter(null);
@@ -38,7 +38,7 @@ export default function TagsSection () {
                 All Tags
             </h1>
             <ul className="side-tag-list" >
-                {tagList?.map((tag:ITag) => (
+                {tagList?.map((tag: ITag) => (
                     <li 
                     key = {tag._id.toString()}
                     className ={`side-tag-list-item ${filter == tag ? 'active' : '' }`}
@@ -47,7 +47,7 @@ export default function TagsSection () {
                         handleTagClick(tag);
                     }}
                     role='button'
-                    tag-index ={0}>
+                    tabIndex ={0}>
                         {tag.name}
                     </li>
                 ))}

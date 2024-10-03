@@ -36,10 +36,10 @@ export default function ReadRandomArticle() {
 
     useEffect(() => {
         fetchArticleId();
-    },[]);
+    });
 
     return (
-        <Link to ={`/article./${articleId}`} className = "randomArticleBtn" onClick={handleClick}>
+        <Link to ={`/article/${articleId}`} className = "randomArticleBtn" onClick={handleClick}>
             Random Article <FaRandom/>
         </Link>
     )

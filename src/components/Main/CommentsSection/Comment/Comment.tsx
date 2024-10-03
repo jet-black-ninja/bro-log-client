@@ -13,7 +13,7 @@ export default function Comment ({commentData}:Props) {
         <div className="comment" aria-label="Comment">
             <div className="comment-head">
                 from: <strong>{author}</strong> on
-                {format(new Date(timestamp || ''),'dd. MM. yyyy')}
+                {format(new Date(timestamp || ''),' dd. MM. yyyy')}
             </div>
             <p className='comment-text'>
                 <em>{text}</em>

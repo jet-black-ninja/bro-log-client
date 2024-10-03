@@ -69,7 +69,7 @@ export default function ArticlePage({setCurrentView}:Props) {
         return <ArticleFetchingAnimation />;
     }
     
-    if (error) {
+    if(error) {
         return <NotFoundPage setCurrentView={setCurrentView} />;
     }
 
@@ -106,7 +106,7 @@ export default function ArticlePage({setCurrentView}:Props) {
             setRefetchTrigger={setRefetchTrigger}
             aria-label="Article Comments"
             />
-        )}
+             )} 
         {!article && (
             <CommentsSection
             commentList={[]}

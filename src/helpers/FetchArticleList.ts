@@ -19,7 +19,6 @@ export const fetchArticleList = async(
 
     }catch(error:any){
         setError(error)
-    }finally{
-    setLoading(false);
     }
+    setLoading(false);
 }

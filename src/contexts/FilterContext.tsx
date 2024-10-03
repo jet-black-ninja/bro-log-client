@@ -2,12 +2,12 @@ import { createContext, useState } from "react";
 import { ITag } from "../interfaces/Tag";
 
 interface FilterContextProviderProps{
-    children: React.ReactNode;
+    children: React.ReactElement;
 }
 
 interface FilterContextProps{
     filter: ITag | string | null;
-    setFilter : (filter:ITag | string | null) => void;
+    setFilter : (filter: ITag | string | null) => void;
 }
 
 const FilterContext = createContext<FilterContextProps>({
@@ -16,7 +16,7 @@ const FilterContext = createContext<FilterContextProps>({
 })
 
 export function FilterContextProvider({children}:FilterContextProviderProps) {
-    const[filter, setFilter] = useState<ITag | string | null> (null);
+    const [filter, setFilter] = useState<ITag | string | null> (null);
     return <FilterContext.Provider value = {{filter, setFilter}}>{children}</FilterContext.Provider>
 }
 

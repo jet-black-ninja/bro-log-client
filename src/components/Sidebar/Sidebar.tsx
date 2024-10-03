@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import ClearSearch from "./ClearSearch/ClearSearch";
 import ReadRandomArticle from "./ReadRandomArticle/ReadRandomArticle";
 import SearchSection from "./SearchSection/SearchSection";
@@ -9,6 +9,9 @@ import ThemeSection from './ThemeSection/ThemeSection';
 
 // Memoize the SearchSection component to prevent unnecessary re-renders
 const MemoizedSearchSection = React.memo(SearchSection);
+
+// Memoize the SocialLinks component to prevent unnecessary re-renders
+const MemoizedSocialLinks = React.memo(SocialLinks);
 
 export default function Sidebar() {
     return (
@@ -29,7 +32,7 @@ export default function Sidebar() {
                 <ThemeSection aria-label="Toggle Theme" />
             </div>
             <div className="sidebar-social-links">
-                <SocialLinks />
+                <MemoizedSocialLinks />
             </div>
         </div>
     )

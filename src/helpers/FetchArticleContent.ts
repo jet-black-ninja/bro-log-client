@@ -1,27 +1,28 @@
-import axios from "axios";
-import { Dispatch, SetStateAction } from "react";
-import { IArticle } from "../interfaces/Article";
-export const fetchArticleContent=  async(
-    id: string,
-    setArticle:Dispatch<SetStateAction<IArticle>>,
-    setLoading:Dispatch<SetStateAction<boolean>>,
-    setError:Dispatch<SetStateAction<Error | null>>,
+import axios from 'axios';
+
+export const fetchArticleContent = async (
+    id: string | undefined,
+    setArticle?: Function,
+    setLoading?: Function, 
+    setError?: Function
 ) => {
     try {
-        const serverURL = import.meta.env.VITE_SERVER_URL;
-        const res = await axios.get(`${serverURL}/api/articles/${id}`);
-        
-        if(res.status === 200){
-            const data = res.data;
+        const serveURL = import.meta.env.VITE_SERVER_URL;
+        const res = await axios.get(`${serveURL}/api/articles/${id}`);
+        if(res.status ===200){
             if(setArticle){
-                setArticle(data.article)
+                setArticle(res.data.article);
             }
-        }else {
-            throw new Error(`Server Returned ${res.status} ${res.statusText}`);
+        } else {
+            throw new Error(`Server returned ${res.status} ${res.statusText}`);
         }
-    }catch(error:any) {
-        setError(error);
-    }finally{
-        setLoading(false);
+    } catch(err) {
+        if(setError){
+            setError(err);
+        }
+    } finally {
+        if(setLoading){
+            setLoading(false);
+        }
     }
 }

@@ -44,7 +44,7 @@ export default function NewCommentModal({showModal, closeModal, setRefetchTrigge
 
 
     return (
-        <div className ={`modal-overlay${showModal ? 'fade-in' : 'fade-out'}`} >
+        <div className ={`modal-overlay${showModal ? ' fade-in' : ' fade-out'}`} >
             <div className='modal-content'>
                 <h2>Add Comment</h2>
                 <form onSubmit={handleSubmit}>

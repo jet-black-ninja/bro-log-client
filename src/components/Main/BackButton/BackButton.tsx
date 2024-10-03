@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+// Import only the necessary icon to reduce bundle size
 import { FaArrowLeft } from "react-icons/fa";
 import "./BackButton.scss";
 

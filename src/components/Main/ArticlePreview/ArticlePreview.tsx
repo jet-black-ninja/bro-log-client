@@ -26,7 +26,7 @@ export default function ArticlePreview({articleData}: Props) {
     }
 
     return (
-        <Link to ={`article/${_id}`} className="article" >
+        <Link to ={`/article/${_id}`} className="article" >
             <div className="layer"></div>
             <div className="article-top">
                 <div className="article-head">

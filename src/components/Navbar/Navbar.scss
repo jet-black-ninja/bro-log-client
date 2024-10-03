@@ -54,7 +54,7 @@
                 bottom: -5px;
             }
         }
-        .active::before{
+        &.active::before{
             transform-origin: left;
             transform:scaleX(1);
             bottom: -5px;
