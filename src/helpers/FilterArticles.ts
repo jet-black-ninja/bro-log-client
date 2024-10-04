@@ -18,9 +18,9 @@ export const filterArticles = (
         })
     }else if(filter){
         //search from tags
-        filtered = fullArticleList.filter(({tags = []}) => {
+        filtered = fullArticleList.filter(({tags = []}) => 
             tags.some(({_id}) => _id === filter._id)
-        })
+        )
     }
     setActiveArticleList(filtered);
 }

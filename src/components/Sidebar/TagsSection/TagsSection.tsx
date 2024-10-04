@@ -13,7 +13,7 @@ export default function TagsSection () {
     const navigate = useNavigate();
 
     const handleTagClick = (tag: ITag) => {
-        if(tag!==filter){
+        if(tag !== filter){
             navigate('/search');
         }else {
             setFilter(null);
