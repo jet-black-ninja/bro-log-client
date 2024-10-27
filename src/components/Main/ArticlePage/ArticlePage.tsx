@@ -12,7 +12,7 @@ import ArticleFetchingAnimation from "../ArticleFetchingAnimation/ArticleFetchin
 import CommentsSection from "../CommentsSection/CommentsSection";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import BackButton from "../BackButton/BackButton";
-import { FaGlasses } from "react-icons/fa";
+import { FaGlasses } from "react-icons/fa";//@ts-ignore
 import Prism from "prismjs";
 import parse from 'html-react-parser';
 import {decode} from "html-entities";

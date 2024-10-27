@@ -1,11 +1,16 @@
-import MillionLint from '@million/lint';
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
-const _plugins = [react()];
-// _plugins.unshift(MillionLint.vite())
 export default defineConfig({
-  plugins: _plugins,
-  base: '/bro-log/'
+  server: {
+    proxy: {
+      "/api": {
+        target: process.env.VITE_SERVER_URL,
+        changeOrigin: true, // Ensures the host header matches the target URL
+        secure: false, // Disable if your server is using an insecure connection (http instead of https)
+      },
+    },
+  },
+  plugins: [react()],
+  base: "/bro-log/",
 });
